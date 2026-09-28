@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+<title>Mehtab Jewellers</title>
+
+<meta name="description"
+content="Mehtab Jewellers - Premium Jewellery Collection">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+-webkit-tap-highlight-color:transparent;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#08090b;
+color:#fff;
+font-family:'DM Sans',sans-serif;
+overflow-x:hidden;
+}
+
+button,
+input{
+font-family:inherit;
+}
+
+button{
+cursor:pointer;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+
+/* COLORS */
+
+:root{
+--bg:#08090b;
+--card:#12151a;
+--card2:#181b20;
+--gold:#d8ad58;
+--gold2:#f2d48e;
+--muted:#92969e;
+--border:rgba(255,255,255,.09);
+}
+
+
+/* OFFER BAR */
+
+.offer{
+height:34px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#101216;
+border-bottom:1px solid var(--border);
+font-size:10px;
+letter-spacing:1.2px;
+color:var(--gold2);
+text-transform:uppercase;
+padding:0 10px;
+}
+
+
+/* HEADER */
+
+.header{
+height:64px;
+position:sticky;
+top:0;
+z-index:1000;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 14px;
+background:rgba(8,9,11,.94);
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--border);
+}
+
+.menu{
+width:40px;
+height:40px;
+border:1px solid var(--border);
+border-radius:12px;
+background:#14171c;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:5px;
+}
+
+.menu span{
+width:18px;
+height:2px;
+background:#fff;
+border-radius:10px;
+}
+
+.logo{
+text-align:center;
+}
+
+.logo h1{
+font-family:'Playfair Display',serif;
+font-size:17px;
+letter-spacing:1.5px;
+}
+
+.logo p{
+font-size:7px;
+letter-spacing:3px;
+color:var(--gold);
+margin-top:5px;
+}
+
+.header-right{
+display:flex;
+gap:7px;
+}
+
+.header-btn{
+width:40px;
+height:40px;
+border:1px solid var(--border);
+border-radius:12px;
+background:#14171c;
+color:#fff;
+font-size:17px;
+}
+
+
+/* HERO */
+
+.hero{
+height:560px;
+position:relative;
+overflow:hidden;
+background:#000;
+}
+
+
+/* YOUTUBE VIDEO */
+
+.hero-video{
+position:absolute;
+inset:0;
+overflow:hidden;
+background:#000;
+}
+
+.hero-video iframe{
+position:absolute;
+top:50%;
+left:50%;
+width:177.78vh;
+height:100vh;
+min-width:100%;
+min-height:100%;
+transform:translate(-50%,-50%);
+border:0;
+pointer-events:none;
+}
+
+
+/* HERO DARK LAYER */
+
+.hero-dark{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.05) 20%,
+rgba(0,0,0,.30) 48%,
+rgba(0,0,0,.92) 100%
+);
+z-index:2;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content{
+position:absolute;
+left:18px;
+right:18px;
+bottom:30px;
+z-index:3;
+}
+
+.hero-label{
+font-size:9px;
+letter-spacing:3px;
+color:var(--gold2);
+margin-bottom:9px;
+}
+
+.hero-title{
+font-family:'Playfair Display',serif;
+font-size:40px;
+line-height:1.04;
+font-weight:600;
+}
+
+.hero-text{
+margin-top:11px;
+font-size:12px;
+line-height:1.6;
+color:#d0d0d0;
+max-width:330px;
+}
+
+.hero-buttons{
+display:flex;
+gap:8px;
+margin-top:18px;
+}
+
+.btn-main{
+border:0;
+background:var(--gold);
+color:#111;
+padding:12px 17px;
+border-radius:11px;
+font-size:11px;
+font-weight:700;
+}
+
+.btn-light{
+border:1px solid rgba(255,255,255,.22);
+background:rgba(0,0,0,.3);
+color:#fff;
+padding:12px 17px;
+border-radius:11px;
+font-size:11px;
+backdrop-filter:blur(8px);
+}
+
+
+/* QUICK BUTTONS */
+
+.quick{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:6px;
+padding:12px;
+background:#0d0f12;
+border-bottom:1px solid var(--border);
+}
+
+.quick button{
+border:1px solid var(--border);
+background:#15181d;
+color:#fff;
+border-radius:11px;
+padding:10px 3px;
+}
+
+.quick-icon{
+display:block;
+font-size:17px;
+margin-bottom:4px;
+}
+
+.quick small{
+font-size:7px;
+color:#a7a7a7;
+}
+
+
+/* SECTION */
+
+.section{
+padding:34px 14px;
+}
+
+.section-top{
+display:flex;
+align-items:end;
+justify-content:space-between;
+margin-bottom:16px;
+}
+
+.section-label{
+font-size:8px;
+letter-spacing:2.5px;
+color:var(--gold);
+margin-bottom:5px;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:27px;
+}
+
+.view{
+font-size:10px;
+color:var(--gold2);
+}
+
+
+/* CATEGORY */
+
+.categories{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:9px;
+}
+
+.category{
+height:145px;
+position:relative;
+overflow:hidden;
+border-radius:15px;
+border:1px solid var(--border);
+background:#111;
+}
+
+.category img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.category:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to top,
+rgba(0,0,0,.85),
+transparent 65%
+);
+}
+
+.category-name{
+position:absolute;
+z-index:2;
+left:12px;
+bottom:12px;
+font-family:'Playfair Display',serif;
+font-size:17px;
+}
+
+
+/* PRODUCT AREA */
+
+.products{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.product{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:15px;
+overflow:hidden;
+}
+
+.product-img{
+position:relative;
+aspect-ratio:1/1;
+overflow:hidden;
+background:#181a1f;
+}
+
+.product-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.heart{
+position:absolute;
+right:8px;
+top:8px;
+width:31px;
+height:31px;
+border-radius:50%;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(0,0,0,.55);
+color:#fff;
+}
+
+.product-info{
+padding:11px;
+}
+
+.product-name{
+font-size:12px;
+font-weight:600;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.product-desc{
+font-size:9px;
+color:#7e838b;
+margin-top:4px;
+}
+
+.price{
+font-size:14px;
+font-weight:700;
+color:var(--gold2);
+margin-top:8px;
+}
+
+.add{
+width:100%;
+margin-top:9px;
+padding:9px;
+border-radius:9px;
+border:1px solid rgba(216,173,88,.35);
+background:rgba(216,173,88,.08);
+color:var(--gold2);
+font-size:9px;
+font-weight:700;
+}
+
+
+/* MOBILE */
+
+@media(max-width:360px){
+
+.hero{
+height:530px;
+}
+
+.hero-title{
+font-size:35px;
+}
+
+.quick{
+gap:4px;
+}
+
+.quick small{
+font-size:6px;
+}
+
+}
+
+
+/* DESKTOP */
+
+@media(min-width:768px){
+
+.hero{
+height:650px;
+}
+
+.hero-content{
+left:7%;
+bottom:50px;
+}
+
+.hero-title{
+font-size:60px;
+}
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:55px 25px;
+}
+
+.categories{
+grid-template-columns:repeat(4,1fr);
+}
+
+.products{
+grid-template-columns:repeat(4,1fr);
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- OFFER -->
+
+<div class="offer">
+✦ PREMIUM JEWELLERY • WHOLESALE & RETAIL ✦
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<button class="menu"
+onclick="openMenu()">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+
+<div class="logo">
+
+<h1>MEHTAB JEWELLERS</h1>
+
+<p>JEWELLERY WHOLESALER</p>
+
+</div>
+
+
+<div class="header-right">
+
+<button class="header-btn"
+onclick="openSearch()">
+⌕
+</button>
+
+<button class="header-btn"
+onclick="openCart()">
+🛍
+</button>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero"
+id="home">
+
+
+<div class="hero-video">
+
+<iframe
+src="https://www.youtube.com/embed/u7K7hL3ZmS4?autoplay=1&mute=1&loop=1&playlist=u7K7hL3ZmS4&controls=0&playsinline=1&rel=0"
+title="Jewellery Showcase"
+allow="autoplay; encrypted-media; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+
+<div class="hero-dark"></div>
+
+
+<div class="hero-content">
+
+<div class="hero-label">
+MEHTAB JEWELLERS
+</div>
+
+<h2 class="hero-title">
+Elegance<br>
+That Lasts.
+</h2>
+
+<p class="hero-text">
+Discover beautiful jewellery designed
+for weddings, celebrations and everyday
+elegance.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn-main"
+onclick="goProducts()">
+Explore Collection
+</button>
+
+<button class="btn-light"
+onclick="whatsapp()">
+WhatsApp
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUICK ACTIONS -->
+
+<div class="quick">
+
+<button onclick="whatsapp()">
+<span class="quick-icon">💬</span>
+<small>Message</small>
+</button>
+
+<button onclick="callNow()">
+<span class="quick-icon">📞</span>
+<small>Voice</small>
+</button>
+
+<button onclick="toast('Catalog coming soon')">
+<span class="quick-icon">📖</span>
+<small>Catalog</small>
+</button>
+
+<button onclick="toast('Payment option coming soon')">
+<span class="quick-icon">₹</span>
+<small>Pay</small>
+</button>
+
+<button onclick="shareSite()">
+<span class="quick-icon">↗</span>
+<small>Share</small>
+</button>
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<section class="section">
+
+<div class="section-top">
+
+<div>
+<div class="section-label">
+EXPLORE
+</div>
+
+<h2 class="section-title">
+Categories
+</h2>
+</div>
+
+<a href="#products"
+class="view">
+View All →
+</a>
+
+</div>
+
+
+<div class="categories">
+
+
+<a class="category"
+href="#products">
+
+<img
+src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=80"
+alt="Necklaces">
+
+<div class="category-name">
+Necklaces
+</div>
+
+</a>
+
+
+<a class="category"
+href="#products">
+
+<img
+src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80"
+alt="Rings">
+
+<div class="category-name">
+Rings
+</div>
+
+</a>
+
+
+<a class="category"
+href="#products">
+
+<img
+src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&w=700&q=80"
+alt="Earrings">
+
+<div class="category-name">
+Earrings
+</div>
+
+</a>
+
+
+<a class="category"
+href="#products">
+
+<img
+src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=700&q=80"
+alt="Bangles">
+
+<div class="category-name">
+Bangles
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- PART 1 END -->
